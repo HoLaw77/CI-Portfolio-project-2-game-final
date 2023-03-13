@@ -13,6 +13,9 @@ const yourText = document.querySelector("#yourText");
             yourText.textContent = `Your choice: ${your}`;
             robotText.textContent = `Robot choice: ${robot}`;
             resultText.textContent = checkWinner();
+            if (resultText.textContent === "Congrats! You Win!"){incrementWin()};
+            if (resultText.textContent === "Draw!"){incrementDraw()};
+            if (resultText.textContent === "You Lose! Try Again!"){incrementLose()};
         }));
         
         
@@ -46,3 +49,25 @@ const yourText = document.querySelector("#yourText");
               return (your == "ROCK") ? "Congrats! You Win!" : "You Lose! Try Again!"
             }
         }
+
+        function incrementWin() {
+
+            let score = parseInt(document.getElementById("win").innerText);
+            document.getElementById("win").innerText = ++score;
+            
+            }
+            
+            function incrementDraw() {
+            
+            let score = parseInt(document.getElementById("draw").innerText);
+            document.getElementById("draw").innerText = ++score;
+            
+            }
+            
+            function incrementLose() {
+            
+            let score = parseInt(document.getElementById("lose").innerText);
+            document.getElementById("lose").innerText = ++score;
+            
+            }
+            
